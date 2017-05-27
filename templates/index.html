@@ -77,7 +77,8 @@
     
     <script>
         $("#btn_ping").click(function() {
-            $.get("/ping", function(result) {
+            $.get("/ping", function(response) {
+                var result = JSON.parse(response);
                 $("#td_ping").text(result.data);
             });
             
@@ -85,7 +86,8 @@
         });
         
         $("#btn_time").click(function() {
-            $.get("/timestamp", function(result) {
+            $.get("/timestamp", function(response) {
+                var result = JSON.parse(response);
                 $("#td_time").text(result.data);
             });
             
@@ -93,7 +95,8 @@
         });
         
         $("#btn_uuid").click(function() {
-            $.get("/uuid", function(result) {
+            $.get("/uuid", function(response) {
+                var result = JSON.parse(response);
                 $("#td_uuid").text(result.data);
             });
             

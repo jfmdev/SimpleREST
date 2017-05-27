@@ -1,13 +1,13 @@
 # Simple REST
 
-This project is a sample application for showing how to implement a simple REST API using _Python_ and _Flask_.
+This project is a sample application for showing how to implement a simple REST API using _Python_ and _CherryPy_.
 
 ## Requirements
 
-The software was developed using **Python** and **Flask**, so you need:
+The software was developed using **Python** and **CherryPy**, so you need:
 
  * Install _Python 3.6_ in your machine (if not already installed).
- * Install the _Flask_ dependency (which can be done with the command `pip install Flask`, after installing Python).
+ * Install the _CherryPy_ dependency (which can be done with the command `pip install cherrypy`, after installing Python).
  
 ## Execution
 
