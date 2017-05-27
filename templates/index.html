@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Simple REST</title>
+    <meta name="description" content="Sample page for testing the REST services">
+    <meta name="author" content="Securiport">
+
+    <script src="lib/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="lib/moment.min.js"></script>
+    
+    <style>
+        .col--result {
+            font-family: "Courier New", Courier, monospace
+            color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simple REST</h1>
+        
+        <p>This page allows to test the different endpoints.</p>
+        
+        <form class="form-inline">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Parameters</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="btn btn-info" id="btn_ping">Ping</button></td>
+                        <td></td>
+                        <td id="td_ping"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-info" id="btn_time">Timestamp</button></td>
+                        <td></td>
+                        <td id="td_time"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-info" id="btn_uuid">UUID</button></td>
+                        <td></td>
+                        <td id="td_uuid"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-info" id="btn_hello">Hello</button></td>
+                        <td><input type="text" class="form-control" value="John" id="input_hello"/></td>
+                        <td id="td_hello"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-info" id="btn_mul">Multiply</button></td>
+                        <td>
+                            <input type="number" class="form-control" value="3" id="input_mul1"/>
+                            *
+                            <input type="number" class="form-control" value="4" id="input_mul2"/>
+                        </td>
+                        <td id="td_mul"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+    </div>
+    
+    <script>
+        $("#btn_ping").click(function() {
+            $.get("/ping", function(result) {
+                $("#td_ping").text(result.data);
+            });
+            
+            return false;
+        });
+        
+        $("#btn_time").click(function() {
+            $.get("/timestamp", function(result) {
+                $("#td_time").text(result.data);
+            });
+            
+            return false;
+        });
+        
+        $("#btn_uuid").click(function() {
+            $.get("/uuid", function(result) {
+                $("#td_uuid").text(result.data);
+            });
+            
+            return false;
+        });
+        
+        $("#btn_hello").click(function() {
+            var name = $("#input_hello").val();
+            
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "/hello",
+                data: JSON.stringify({'name': name}),
+                success: function (result) {
+                    $("#td_hello").text(result.data);
+                },
+                dataType: "json"
+            });
+            
+            return false;
+        });
+        
+        $("#btn_mul").click(function() {
+            var num1 = parseInt($("#input_mul1").val());
+            var num2 = parseInt($("#input_mul2").val());
+            
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "/multiply",
+                data: JSON.stringify({'num1': num1, 'num2': num2}),
+                success: function (result) {
+                    $("#td_mul").text(result.data);
+                },
+                dataType: "json"
+            });
+            
+            return false;
+        });
+    </script>
+</body>
+</html>
