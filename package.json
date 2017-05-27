@@ -1,0 +1,25 @@
+{
+  "name": "simplerest",
+  "version": "1.0.0",
+  "description": "A simple REST application",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfmdev/SimpleREST.git"
+  },
+  "author": "JFMDev",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/jfmdev/SimpleREST/issues"
+  },
+  "homepage": "https://github.com/jfmdev/SimpleREST#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "uuid": "^3.0.1"
+  }
+}
