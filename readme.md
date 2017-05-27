@@ -16,3 +16,8 @@ The software was developed using **Python** and **Flask**, so you need:
 In order to run the software, you must execute the command `python main.py` (inside the project's folder),
 and then open the URL [http://localhost:5000](http://localhost:5000) in your browser.
 
+## License
+
+Simple REST is free software; you can redistribute it and/or
+modify it under the terms of the Mozilla Public
+License v2.0. You should have received a copy of the MPL 2.0 along with this library, otherwise you can obtain one at <http://mozilla.org/MPL/2.0/>.
