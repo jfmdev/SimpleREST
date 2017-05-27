@@ -2,6 +2,8 @@
 
 This project is a sample application for showing how to implement a simple REST API using _Python_ and _CherryPy_.
 
+> This project is also implemented using [Python & Flask](https://github.com/jfmdev/SimpleREST) and using [JavaScript & Express](https://github.com/jfmdev/SimpleREST/tree/express).
+
 ## Requirements
 
 The software was developed using **Python** and **CherryPy**, so you need:
