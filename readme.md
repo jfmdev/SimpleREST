@@ -2,6 +2,8 @@
 
 This project is a sample application for showing how to implement a simple REST API using _Python_ and _Flask_.
 
+> This project is also implemented using [Python & CherryPy](https://github.com/jfmdev/SimpleREST/tree/cherrypy) and using [JavaScript & Express](https://github.com/jfmdev/SimpleREST/tree/express).
+
 ## Requirements
 
 The software was developed using **Python** and **Flask**, so you need:
